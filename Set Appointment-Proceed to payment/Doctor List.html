@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Doctors</title>
+    <style>
+     
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .doctor-card {
+            max-width: 300px;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+        }
+
+        .doctor-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .doctor-specialty {
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>All Doctors</h1>
+    </header>
+
+    <section id="doctorsList">
+        <!-- Doctor cards will be dynamically added here using JavaScript -->
+    </section>
+
+    <script>
+     
+        const doctors = [
+            { id: 1, name: 'Hannan Taleb', specialty: 'Cardiology' },
+            { id: 2, name: 'Wafa Bdeir', specialty: 'Pediatrics' },
+            { id: 3, name: 'Rossel Ziad', specialty: 'Orthopedics' },
+              { id: 4, name: 'Mickel Mink ', specialty: 'Dentist' },
+          
+        ];
+
+
+        const doctorsList = document.getElementById('doctorsList');
+        doctors.forEach(doctor => {
+            const doctorCard = document.createElement('div');
+            doctorCard.className = 'doctor-card';
+            doctorCard.innerHTML = `
+                <div class="doctor-name">${doctor.name}</div>
+                <div class="doctor-specialty">${doctor.specialty}</div>
+            `;
+            doctorCard.addEventListener('click', () => redirectToDoctorHomepage(doctor.id));
+            doctorsList.appendChild(doctorCard);
+        });
+
+       
+        function redirectToDoctorHomepage(doctorId) {
+            window.location.href = `doctor_homepage.html?id=${doctorId}`;
+        }
+    </script>
+
+</body>
+</html>
