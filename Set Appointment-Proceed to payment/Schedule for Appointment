@@ -1,1 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor's Homepage</title>
+    <style>
+        /* Add your styling here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box; /* Include padding in the width */
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Dr. John Doe, MD</h1>
+        <p>Board Certified Physician</p>
+    </header>
+
+    <section>
+     
+        <h2>Schedule an Appointment</h2>
+        <form id="appointmentForm">
+            <label for="patientName">Your Name:</label>
+            <input type="text" id="patientName" name="patientName" required>
+
+            <label for="selectedDoctor">Select Doctor:</label>
+            <select id="selectedDoctor" name="selectedDoctor" required>
+                <option value="Dr. Hannan Taleb">Dr. Hannan Taleb</option>
+                 <option value="Dr. Wafa Bdeir">Dr.Wafa Bdeir</option>
+                  <option value="Dr. Rossel Ziad">Dr.Rossel Ziad</option>
+                   <option value="Dr. Mickel Mink">Dr. Mickel Mink</option>
+               
+            </select>
+
+            <label for="appointmentDate">Select Appointment Date and Time:</label>
+            <input type="datetime-local" id="appointmentDate" name="appointmentDate" required>
+
+            <button type="button" onclick="scheduleAppointment()">Schedule Appointment</button>
+        </form>
+    </section>
+
+    <footer>
+        &copy; 2023 Dr. Hannan Taleb, MD
+        &copy; 2023 Dr. Wafa Bdeir, MD
+        &copy; 2023 Dr. Rossel Ziad, MD
+        &copy; 2023 Dr. Mickel Mink, MD
+    </footer>
+
+    <script>
+        function scheduleAppointment() {
+          
+        }
+    </script>
+
+</body>
+</html>
 
