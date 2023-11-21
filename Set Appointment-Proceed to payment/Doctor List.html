@@ -3,52 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Doctors</title>
+    <title>Doctor List</title>
     <style>
-     
+    
+/* Background Color */
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
+            font-family: 'Papyrus', Papyrus, Geneva, Verdana, sans-serif;
+            margin: 0; padding: 0; background-color: #e0f7fa; 
         }
-
+/* Header Color */
         header {
-            background-color: #333;
+            background-color: #0288d1; 
             color: white;
-            text-align: center;
-            padding: 20px;
+            text-align: center; padding: 5px;
+            font-size: 30px;
         }
 
         section {
-            display: flex;
-            flex-wrap: wrap;
+            display: flex;  flex-wrap: wrap;
             justify-content: center;
         }
 
         .doctor-card {
-            max-width: 300px;
-            margin: 20px;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: transform 0.2s;
+            max-width: 400px; margin: 30px;
+            padding: 100px;  background-color: #fff; /* White Card Background */
+            border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  cursor: pointer;
+            transition: transform 1s;
         }
 
-        .doctor-card:hover {
+.doctor-card:hover {
             transform: scale(1.05);
         }
+/* font and size for doctor name*/
 
         .doctor-name {
             font-size: 18px;
             font-weight: bold;
-            color: #333;
+            color: #212121; 
+            margin-bottom: 8px; 
         }
-
+/* Text Color */
         .doctor-specialty {
-            color: #555;
+            color: #757575; 
         }
     </style>
 </head>
@@ -62,7 +58,7 @@
        
     </section>
 
-    <script>
+      <script>
      
         const doctors = [
             { id: 1, name: 'Dr. Marisa R. Abbod', specialty: 'Family Medicine' },
@@ -87,9 +83,6 @@
         });
 
        
-        function redirectToDoctorHomepage(doctorId) {
-            window.location.href = `doctor_homepage.html?id=${doctorId}`;
-        }
     </script>
 
 </body>
