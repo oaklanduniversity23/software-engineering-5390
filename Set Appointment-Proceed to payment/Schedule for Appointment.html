@@ -5,93 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Doctor's Homepage</title>
     <style>
-    
+        
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Papyrus', Fantasy; /* Font Type  */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #e0f7fa; 
         }
 
+        
         header {
-            background-color: #333;
+            background-color: #0288d1; /* Dark blue background */
             color: white;
             text-align: center;
             padding: 20px;
         }
 
         section {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px; margin: 20px auto;
+           padding: 20px; background-color: #fff; /* White background */
+           border-radius: 8px;box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
         }
 
+        
         h1 {
-            color: #333;
+            color: #0288d1;
         }
 
+        /* styling for the form within the main section */
         form {
             max-width: 400px;
             margin: 20px auto;
         }
 
+        /*  styling for form labels */
         label {
             display: block;
-            margin-bottom: 8px;
+            margin-bottom: 15px;
         }
 
+        /* styling for form inputs and select dropdown */
         input, select {
-            width: 100%;
-            padding: 8px;
-            margin-bottom: 16px;
-            box-sizing: border-box; /* Include padding in the width */
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            width: 100%; padding: 8px;
+            margin-bottom: 16px;  box-sizing: content-box; border: 5px solid #0288d1; border-radius: 5px;
         }
 
+        /* styling for the calendar input */
+         input[type="datetime-local"] {  width: 80%; padding: 6px; margin-bottom: 16px; box-sizing: content-box;
+          border: 5px solid #0288d1; border-radius: 10px; outline: none; transition: border-color 0.3s ease;
+}
+        input[type="datetime-local"]:focus {
+          border-color: #4CAF50; 
+}
+
+
+        /* styling for the submit button */
         button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
+            background-color: #0277bd; /* Slightly darker blue button */
+            color: white; padding: 10px 15px;
+             border: none; border-radius: 4px;
+             cursor: pointer;
         }
 
+        /* styling for the footer */
         footer {
             text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            padding: 10px;  background-color: #0288d1; 
+            color: white; position: fixed;
+           bottom: 0; width: 100%;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Dr. John Doe, MD</h1>
-        <p>Board Certified Physician</p>
-    </header>
 
-    <section>
-     
+    
+    <section>    
         <h2>Schedule an Appointment</h2>
-        <form id="appointmentForm">
+        
+        
+        
+        <form id="appointmentForm">     <!-- Appointment Form -->
             <label for="patientName">Your Name:</label>
             <input type="text" id="patientName" name="patientName" required>
 
             <label for="selectedDoctor">Select Doctor:</label>
             <select id="selectedDoctor" name="selectedDoctor" required>
                 <option value="Dr. Marisa R. Abbod">Dr. Marisa R. Abbod</option>
-                 <option value="Dr. Firas F. Abdollah">Dr. Firas F. Abdollah</option>
-                  <option value="Dr. Amr Abbas ">Dr. Amr Abbas</option>
-                   <option value="Dr. Syna M. Kuttothara">Dr. Syna M. Kuttothara</option>
+                <option value="Dr. Firas F. Abdollah">Dr. Firas F. Abdollah</option>
+                <option value="Dr. Amr Abbas ">Dr. Amr Abbas</option>
+                <option value="Dr. Syna M. Kuttothara">Dr. Syna M. Kuttothara</option>
                 <option value="Dr. Wendy L. King">Dr. Wendy L. King</option>
             </select>
 
@@ -102,19 +106,16 @@
         </form>
     </section>
 
-    <footer>
+ 
+    <footer>    <!-- Footer Section  -->
         &copy; 2023 Dr. Marisa R. Abbod, MD
         &copy; 2023 Dr. Firas F. Abdollah , MD
         &copy; 2023 Dr. Amr Abbas , MD
         &copy; 2023 Dr. Syna M. Kuttothara, MD
-         &copy; 2023 Dr. Wendy L. King, MD
-    </footer>
+        &copy; 2023 Dr. Wendy L. King, MD
+    </footer> 
 
-    <script>
-        function scheduleAppointment() {
-          
-        }
-    </script>
+   
 
 </body>
 </html>
