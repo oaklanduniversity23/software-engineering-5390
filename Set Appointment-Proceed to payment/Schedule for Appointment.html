@@ -118,4 +118,37 @@
    
 
 </body>
+
+<script>
+
+    function scheduleAppointment() {
+    
+        // Get form inputs
+        
+        var patientName = document.getElementById("patientName").value;
+        var selectedDoctor = document.getElementById("selectedDoctor").value;
+        var appointmentDate = document.getElementById("appointmentDate").value;
+
+        // Validate inputs 
+        if (patientName === "" || selectedDoctor === "" || appointmentDate === "") {
+            alert ("Error ,Please fill in all fields");
+            return;
+        }
+
+        // Display a confirmation message
+        
+        var confirmationMessage = "Appointment scheduled:\n\n" +
+        
+            "Patient Name: " + patientName + "\n" +
+            
+            "Selected Doctor: " + selectedDoctor + "\n" +
+            
+            "Appointment Date and Time: " + appointmentDate;
+
+        alert(confirmationMessage);
+
+        document.getElementById("appointmentForm").reset();
+    }
+</script>
+
 </html>
