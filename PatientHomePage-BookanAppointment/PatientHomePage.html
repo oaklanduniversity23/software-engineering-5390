@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patient Tracking System</title>
-	    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <style>
-body {
-    font-family: Arial, sans-serif;
-}
-.navbar {
-            background-color: #2c3e50;
-            overflow: hidden;
-        }
+    body {
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        background-color: #2c3e50;
+        overflow: hidden;
+    }
 
         .navbar a {
             float: left;
@@ -25,30 +26,31 @@ body {
             text-decoration: none;
         }
 
-        .navbar a:hover {
-            background-color: #ddd;
-            color: black;
-        }
+            .navbar a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-        .menu-icon {
+    .menu-icon {
+        display: none;
+        cursor: pointer;
+        float: right;
+    }
+
+    @media screen and (max-width: 600px) {
+        .navbar a:not(:first-child) {
             display: none;
-            cursor: pointer;
+        }
+
+        .navbar a.icon {
             float: right;
+            display: block;
         }
+    }
 
-        @media screen and (max-width: 600px) {
-            .navbar a:not(:first-child) {
-                display: none;
-            }
-            .navbar a.icon {
-                float: right;
-                display: block;
-            }
-        }
-
-        .navbar.responsive {
-            position: relative;
-        }
+    .navbar.responsive {
+        position: relative;
+    }
 
         .navbar.responsive .menu-icon {
             display: block;
@@ -64,146 +66,152 @@ body {
             display: block;
         }
 
-        .navbar-content {
-            display: none;
-        }
+    .navbar-content {
+        display: none;
+    }
 
-        .navbar.responsive .navbar-content {
-            display: block;
-            position: absolute;
-            background-color: #333;
-            width: 100%;
-        }
+    .navbar.responsive .navbar-content {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+    }
 
         .navbar.responsive .navbar-content a {
             float: none;
             display: block;
             text-align: left;
         }
-	    .navbar-content1 {
-            display: none;
-        }
 
-        .navbar.responsive .navbar-content1 {
-            display: block;
-            position: absolute;
-            background-color: #333;
-            width: 100%;
-        }
+    .navbar-content1 {
+        display: none;
+    }
+
+    .navbar.responsive .navbar-content1 {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+    }
 
         .navbar.responsive .navbar-content1 a {
             float: none;
             display: block;
             text-align: left;
-        }	
-		    .navbar-content2 {
-            display: none;
         }
 
-        .navbar.responsive .navbar-content2 {
-            display: block;
-            position: absolute;
-            background-color: #333;
-            width: 100%;
-        }
+    .navbar-content2 {
+        display: none;
+    }
+
+    .navbar.responsive .navbar-content2 {
+        display: block;
+        position: absolute;
+        background-color: #333;
+        width: 100%;
+    }
 
         .navbar.responsive .navbar-content2 a {
             float: none;
             display: block;
             text-align: left;
         }
-button{
-width: 60px;
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;}
 
-header {
-    background-color: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+    button {
+        width: 60px;
+        padding: 0.5rem;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 0 3px 3px 0;
+        cursor: pointer;
+    }
 
-header h1 {
-    margin: 0;
-}
+    header {
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding: 1rem;
+    }
 
-.search-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 1rem;
-}
+        header h1 {
+            margin: 0;
+        }
 
-.search-bar input {
-    width: 300px;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 3px 0 0 3px;
-}
+    .search-bar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 1rem;
+    }
 
-.search-bar button {
-    width: 60px;
-    padding: 0.5rem;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-}
+        .search-bar input {
+            width: 300px;
+            padding: 0.5rem;
+            border: 1px solid #ccc;
+            border-radius: 3px 0 0 3px;
+        }
 
-.doctor-list {
-    display: grid;
-    grid-template-rows;
-    grid-gap: 1rem;
-    padding: 1rem;
-	
-}
+        .search-bar button {
+            width: 60px;
+            padding: 0.5rem;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 0 3px 3px 0;
+            cursor: pointer;
+        }
 
-.doctor-list li {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border-radius: 5px;
-	
-}
+    .doctor-list {
+        display: grid;
+        grid-template-rows;
+        grid-gap: 1rem;
+        padding: 1rem;
+    }
 
-.doctor-list li h2 {
-    margin: 0;
+        .doctor-list li {
+            background-color: #f9f9f9;
+            padding: 1rem;
+            border-radius: 5px;
+        }
 
-}
+            .doctor-list li h2 {
+                margin: 0;
+            }
+
+    .alert {
+        color: red;
+        margin-top: 20px;
+    }
 </style>
 <h1>Hi, Welcome Back</h1>
 <div class="navbar" id="navbar">
     <a href="#" class="icon" onclick="toggleMenu()">&#9776;</a>
-	<a href="#" class="user-icon" onclick="toggleMenu2()"><i class="fas fa-user"></i></a>
-	<a href="#" class="icon" onclick="toggleMenu1()">Category</a>
-    
+    <a href="#" class="user-icon" onclick="toggleMenu2()"><i class="fas fa-user"></i></a>
+    <a href="#" class="icon" onclick="toggleMenu1()">Category</a>
+
 </div>
 
 <div class="navbar-content" id="navbarContent">
 
     <a href="#">Upcoming Appointments</a>
     <a href="#">Past Appointments</a>
-	<a href="#">My Health Record</a>
-	
+    <a href="#">My Health Record</a>
+
 </div>
 
 <div class="navbar-content1" id="navbarContent1">
     <a href="#">Cardiologist</a>
     <a href="#">Dentist</a>
-	<a href="#">Pediatrician</a>
+    <a href="#">Pediatrician</a>
 </div>
 
 <div class="navbar-content2" id="navbarContent2">
     <p>Name: Simha</p>
-	 <p>Age:30</p>
-	  <p>Blood Group: A+ve</p>
-	   <p>Gender: Male</p>
-  
+    <p>Age:30</p>
+    <p>Blood Group: A+ve</p>
+    <p>Gender: Male</p>
+
 </div>
 
 
@@ -213,42 +221,43 @@ header h1 {
         <div class="search-bar">
             <input type="text" id="searchInput" placeholder="Search for doctors">
             <button>Search</button>
+
         </div>
     </header>
     <main>
-        <ul class="Dr. Marisa R. Abbodt" id=itemList>
+        <ul class="doctor-list" id=itemList>
             <li>
-                <h2>Dr. Marisa R. Abbodt</h2> 
-				<p>Experience:7 Years</p>
+                <h2>Dr. Marisa R. Abbodt</h2>
+                <p>Experience:7 Years</p>
                 <p>Family Medicine <button>Book</button></p>
-				</li>
-               <li>
-				<h2>Dr.Firas F. Abdollah</h2>
-				<p>Experience:6 Years</p>
+            </li>
+            <li>
+                <h2>Dr.Firas F. Abdollah</h2>
+                <p>Experience:6 Years</p>
                 <p>Pediatrics <button>Book</button></p>
-				</li>
-				<li>
-				<h2>Dr.Amr Abbas</h2>
-				<p>Experience:8 Years</p>
+            </li>
+            <li>
+                <h2>Dr.Amr Abbas</h2>
+                <p>Experience:8 Years</p>
                 <p>Orthopedics <button>Book</button></p>
-				</li>
-				<li>
-				<h2>Dr.Syna M. Kuttothara</h2>
-				<p>Experience:5 Years</p>
+            </li>
+            <li>
+                <h2>Dr.Syna M. Kuttothara</h2>
+                <p>Experience:5 Years</p>
                 <p>Cardiologist <button>Book</button></p>
-				</li>
-				<li>
-				<h2>Dr. Emma</h2>
-				<p>Experience:17 Years</p>
+            </li>
+            <li>
+                <h2>Dr. Emma</h2>
+                <p>Experience:17 Years</p>
                 <p> Dentist <button>Book</button></p>
-				</li>
-				<li>
-				<h2>Dr. Wendy L. King</h2>
-				<p>Experience:9 Years</p>
+            </li>
+            <li>
+                <h2>Dr. Wendy L. King</h2>
+                <p>Experience:9 Years</p>
                 <p>Internal Medicine <button>Book</button></p>
-				</li>
-	
-			 </ul>
+            </li>
+        </ul>
+
     </main>
 </body>
 <script>
@@ -259,36 +268,43 @@ header h1 {
 
 </script>
 <script>
-	function toggleMenu1() {
+    function toggleMenu1() {
         var navbarContent1 = document.getElementById("navbarContent1");
         navbarContent1.style.display === "block" ? navbarContent1.style.display = "none" : navbarContent1.style.display = "block";
     }
-	</script>
-	<script>
-	function toggleMenu2() {
+</script>
+<script>
+    function toggleMenu2() {
         var navbarContent1 = document.getElementById("navbarContent2");
         navbarContent2.style.display === "block" ? navbarContent2.style.display = "none" : navbarContent2.style.display = "block";
     }
-	</script>
-	<script>
+</script>
+<script>
     // Get the input element and list
     var searchInput = document.getElementById('searchInput');
     var itemList = document.getElementById('itemList');
-    
+
     // Add event listener for input changes
     searchInput.addEventListener('input', function () {
         var searchTerm = searchInput.value.toLowerCase();
         var items = itemList.getElementsByTagName('li');
+        var isPersonFound = false;
 
         // Loop through the items and hide/show based on search term
         for (var i = 0; i < items.length; i++) {
             var itemText = items[i].innerText.toLowerCase();
             if (itemText.includes(searchTerm)) {
                 items[i].style.display = 'block';
+                isPersonFound = true;
             } else {
                 items[i].style.display = 'none';
             }
         }
-    });
+        if (!isPersonFound) {
+            alert('Sorry, the person you are searching for is not in the list.');
+        }
+    }
+    );
 </script>
+
 </html>
