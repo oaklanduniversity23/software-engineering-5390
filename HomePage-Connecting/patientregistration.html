@@ -60,24 +60,75 @@
         text-decoration: underline;
     }
 </style>
-<!--end of form -->
+<!--form start -->
 </head>
 <body>
 
-<div class="container">
-    <h1>Patient Tracking System</h1>
-    <p>Save Time and Improve Patient Experiences with Highly Customizable Digital Medical Intake.</p>
-	<p>Let's get you all registered for your doctor's appointment</p>
-	</br>
-    <h2>Patient Registration</h2>
-    <input type="text" placeholder="Full name">
-    <input type="email" placeholder="Email">
-    <input type="tel" placeholder="Mobile number">
-    <input type="password" placeholder="Password">
-    <input type="password" placeholder="Confirm Password">
-    <button type="submit">SignUp</button>
-    <a href="#" class="signup-doctor">Doctor's SignUp</a>
-</div>
+    <div class="container">
+        <h1>Patient Tracking System</h1>
+        <p>Save Time and Improve Patient Experiences with Highly Customizable Digital Medical Intake.</p>
+        <p>Let's get you all registered for your doctor's appointment</p>
+        <br>
+        <h2>Patient Registration</h2>
+        <!-- Input fields for patient registration details -->
+        <input type="text" id="fullname" placeholder="Full name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Mobile number">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+        <!-- Span for displaying error messages, hidden by default -->
+        <span id="error-message" style="color: red; display: none;"></span>
+        <!-- Sign up button -->
+        <button type="submit" id="signup-button">SignUp</button>
+        <a href="#" class="signup-doctor">Doctor's SignUp</a>
+    </div>
+    <!--end of form -->
+    <!--javascript start -->
+    <script> 
+        // Adding click event listener to the SignUp button
+        document.getElementById("signup-button").addEventListener("click", function(event) {
+            // Retrieving values from input fields
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            var errorMessage = document.getElementById("error-message");
+    
+            // Regular expression for validating email format
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            // Regular expression for validating phone number format (basic 10 digit number)
+            var phoneRegex = /^[0-9]{10}$/;
+    
+            // Checking if any field is empty
+            if (!fullname || !email || !phone || !password || !confirmPassword) {
+                errorMessage.textContent = "Please fill in all fields.";
+            // Validating email format
+            } else if (!emailRegex.test(email)) {
+                errorMessage.textContent = "Invalid email format.";
+            // Validating phone number format
+            } else if (!phoneRegex.test(phone)) {
+                errorMessage.textContent = "Invalid phone number. Please enter a 10 digit number.";
+            // Checking if passwords match
+            } else if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match.";
+            } else {
+                // Clearing the error message
+                errorMessage.textContent = "";
+                
+            }
+    
+            // Displaying error message if any validation fails
+            if (errorMessage.textContent) {
+                errorMessage.style.display = "block";
+                event.preventDefault(); // Preventing form submission
+            } else {
+                // Hiding the error message
+                errorMessage.style.display = "none";
+            }
+        });
+    </script>
+    <!-- end of javascript -->
 
 </body>
 </html>
