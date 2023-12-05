@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Payment Form</title>
+    <style>
+        /* font type, and size */
+        body {
+            font-family: 'Papyrus', Fantasy; 
+            margin: 35; padding:30;
+            background-color: #e0f7fa; 
+            display: center;  align-items: center; justify-content: center;
+            height: 80vh;
+        }
+        /*background color */
+        header {
+            background-color:  #0288d1; 
+            color: #ecf0f1; 
+            text-align: center;
+            padding: 20px;
+        }
+
+        form {
+            max-width: 500px; margin:25px auto;
+            padding: 15px; background-color: #ffffff;  border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        /* label margin and text color */
+        label {
+            display: block; margin-bottom: 8px;
+            color: #456; 
+        }
+        /* input padding,width, box sizing and border */
+        input {
+            width: 70%; padding: 12px; margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #95a5a6; 
+            border-radius: 7px;
+        }
+
+        /*button background color,padding, border ,and cursor */
+        button {
+            background-color: #3498db;  
+            color: #fff;   padding: 15px 22px; border: none; border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Payment Form</h1>
+    </header>
+
+    <form id="paymentForm">
+        <label for="cardNumber">Credit Card Number:</label>
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" required>
+
+        <label for="expiryDate">Expiry Date:</label>
+        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/YY" required>
+
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" placeholder="123" required>
+
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="....." required>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="....." required>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email" placeholder="Email" required>
+        <button type="button" onclick="processPayment()">Submit</button>
+    </form>
+
+    <script>
+        function processPayment() {
+        
+            // Get form inputs
+            
+            var cardNumber = document.getElementById("cardNumber").value;
+            
+            var expiryDate = document.getElementById("expiryDate").value;
+            
+            var cvv = document.getElementById("cvv").value;
+            
+            var firstName = document.getElementById("firstName").value;
+            
+            var lastName = document.getElementById("lastName").value;
+            
+            var email = document.getElementById("email").value;
+    
+            // Validate credit card number 
+            
+            if (!/^\d+$/.test(cardNumber)) {
+                alert("Error,enter a valid credit card number with only digits, Just Number .");
+                return;
+            }
+    
+            // Display a confirmation message 
+            
+            var confirmationMessage = "Payment details submitted:\n\n" +
+                "Credit Card Number: " + cardNumber + "\n" +
+                "Expiry Date: " + expiryDate + "\n" +
+                "CVV: " + cvv + "\n" +
+                "First Name: " + firstName + "\n" +
+                "Last Name: " + lastName + "\n" +
+                "Email: " + email;
+                
+            alert(confirmationMessage);
+    // Redirect to the login page after processing the payment
+        window.location.href = "Login.html";
+            // reset the form after submission
+            document.getElementById("paymentForm").reset();
+        }
+    </script>
+
+</body>
+</html>

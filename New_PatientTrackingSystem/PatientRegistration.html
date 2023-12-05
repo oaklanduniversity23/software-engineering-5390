@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Tracking System - Registration</title>
+<!--start css -->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .container {
+        background-color: #34495e;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    input[type="text"], input[type="email"], input[type="password"], input[type="tel"] {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    button {
+        width: calc(100% - 20px);
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #2980b9;
+    }
+    .signup-doctor {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 14px;
+        display: block;
+        margin-top: 10px;
+    }
+    .signup-doctor:hover {
+        text-decoration: underline;
+    }
+</style>
+<!--form start -->
+</head>
+<body>
+
+    <div class="container">
+        <h1>Patient Tracking System</h1>
+        <p>Save Time and Improve Patient Experiences with Highly Customizable Digital Medical Intake.</p>
+        <p>Let's get you all registered for your doctor's appointment</p>
+        <br>
+        <h2>Patient Registration</h2>
+        <!-- Input fields for patient registration details -->
+        <input type="text" id="fullname" placeholder="Full name">
+        <input type="email" id="email" placeholder="Email">
+        <input type="tel" id="phone" placeholder="Mobile number">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Confirm Password">
+        <!-- Span for displaying error messages, hidden by default -->
+        <span id="error-message" style="color: red; display: none;"></span>
+        <!-- Sign up button -->
+        <button type="submit" id="signup-button"><a href="Login.html" class="signup-button">SignUp</a></button>
+        <a href="doctorregistration.html" class="signup-doctor">Doctor's SignUp</a>
+    </div>
+    <!--end of form -->
+    <!--javascript start -->
+    <script> 
+        // Adding click event listener to the SignUp button
+        document.getElementById("signup-button").addEventListener("click", function(event) {
+            // Retrieving values from input fields
+            var fullname = document.getElementById("fullname").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+            var errorMessage = document.getElementById("error-message");
+    
+            // Regular expression for validating email format
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            // Regular expression for validating phone number format (basic 10 digit number)
+            var phoneRegex = /^[0-9]{10}$/;
+    
+            // Checking if any field is empty
+            if (!fullname || !email || !phone || !password || !confirmPassword) {
+                errorMessage.textContent = "Please fill in all fields.";
+            // Validating email format
+            } else if (!emailRegex.test(email)) {
+                errorMessage.textContent = "Invalid email format.";
+            // Validating phone number format
+            } else if (!phoneRegex.test(phone)) {
+                errorMessage.textContent = "Invalid phone number. Please enter a 10 digit number.";
+            // Checking if passwords match
+            } else if (password !== confirmPassword) {
+                errorMessage.textContent = "Passwords do not match.";
+            } else {
+                // Clearing the error message
+                errorMessage.textContent = "";
+                
+            }
+    
+            // Displaying error message if any validation fails
+            if (errorMessage.textContent) {
+                errorMessage.style.display = "block";
+                event.preventDefault(); // Preventing form submission
+            } else {
+                // Hiding the error message
+                errorMessage.style.display = "none";
+            }
+        });
+    </script>
+    <!-- end of javascript -->
+
+</body>
+</html>

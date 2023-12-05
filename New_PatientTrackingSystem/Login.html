@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patient Tracking System</title>
+
+<!--adding css part-->
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #2c3e50;
+        color: white;
+        text-align: center;
+        padding-top: 50px;
+    }
+    .container {
+        background-color: #34495e;
+        width: 300px;
+        margin: auto;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    h1 {
+        font-size: 24px;
+        margin-bottom: 10px;
+    }
+    p {
+        font-size: 14px;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+    input[type="text"], input[type="password"] {
+        width: calc(100% - 20px);
+        margin-bottom: 10px;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    button {
+        width: calc(100% - 20px);
+        padding: 10px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #2980b9;
+    }
+    .signup {
+        color: #3498db;
+        text-decoration: none;
+        font-size: 14px;
+    }
+    .signup:hover {
+        text-decoration: underline;
+    }
+</style>
+<!--end of css part-->
+</head>
+<body>
+<!--form start -->
+    <div class="container">
+        <h1>Patient Tracking System</h1>
+        <p>Save Time and Improve Patient Experiences with Highly Customizable Digital Medical Interface</p>
+        <br><br> <!-- Spacing for layout -->
+        <input type="text" id="username" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <!-- Span for displaying error message (hidden by default) -->
+        <span id="error-message" style="color: red; display: none;"></span>
+        <button type="submit" id="signin-button" ><a href="PatientHomePage.html" class="signin-button">Sign In</a></button>
+        <p>Don't have an account? <a href="PatientRegistration.html" class="signup">SignUp</a></p>
+    </div>
+    <!-- End of form -->
+    <!-- javascript start -->
+    <script>
+        // Event listener for the Sign In button click event
+        document.getElementById("signin-button").addEventListener("click", function(event) {
+            var username = document.getElementById("username").value;
+            var errorMessage = document.getElementById("error-message");
+    
+            // Validation: check if username starts with a special character or is all numeric
+            if (/^[^a-zA-Z]/.test(username) || /^\d+$/.test(username)) {
+                errorMessage.style.display = "block";
+                errorMessage.textContent = "Username cannot start with a special character or be all numbers.";
+                event.preventDefault(); // Prevents form submission if validation fails
+            } else {
+                errorMessage.style.display = "none"; // Hides error message if validation passes
+            }
+
+        });
+    </script>
+	
+    <!-- javascript end -->
+    
+    
+    
+</body>
+</html>
