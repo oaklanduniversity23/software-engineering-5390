@@ -77,21 +77,24 @@
     <!-- End of form -->
     <!-- javascript start -->
     <script>
-        // Event listener for the Sign In button click event
+       // Event listener for the Sign In button click event
         document.getElementById("signin-button").addEventListener("click", function(event) {
             var username = document.getElementById("username").value;
             var errorMessage = document.getElementById("error-message");
     
-            // Validation: check if username starts with a special character or is all numeric
-            if (/^[^a-zA-Z]/.test(username) || /^\d+$/.test(username)) {
-                errorMessage.style.display = "block";
-                errorMessage.textContent = "Username cannot start with a special character or be all numbers.";
-                event.preventDefault(); // Prevents form submission if validation fails
-            } else {
-                errorMessage.style.display = "none"; // Hides error message if validation passes
-            }
-
-        });
+         // Check if username is empty
+        if (username.trim() === ""  ) {
+            errorMessage.style.display = "block";
+            errorMessage.textContent = "Please enter a username and password.";
+            event.preventDefault(); // Prevents form submission if username is empty
+        } else if (/^[^a-zA-Z]/.test(username) || /^\d+$/.test(username)) {
+            errorMessage.style.display = "block";
+            errorMessage.textContent = "Username cannot start with a special character or be all numbers.";
+            event.preventDefault(); // Prevents form submission if validation fails
+        } else {
+            errorMessage.style.display = "none"; // Hides error message if validation passes
+        }
+    });
     </script>
 	
     <!-- javascript end -->
